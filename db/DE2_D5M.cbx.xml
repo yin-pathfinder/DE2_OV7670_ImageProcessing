@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="DE2_D5M">
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_D5M|Sdram_Control_4Port:u7|Sdram_RD_FIFO:read_fifo1|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_e5o1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_D5M|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram" CBX_FILE_NAME="altsyncram_ss14.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_D5M|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_advance_pointer_counter" CBX_FILE_NAME="cntr_sbi.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_D5M|Sdram_Control_4Port:u7|Sdram_RD_FIFO:read_fifo2|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_e5o1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_D5M|Sdram_Control_4Port:u7|Sdram_WR_FIFO:write_fifo2|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_e5o1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_D5M|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux" CBX_FILE_NAME="mux_9oc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_D5M|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:\adv_point_3_and_more:advance_pointer_counter" CBX_FILE_NAME="cntr_4ci.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_D5M|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:read_pointer_counter" CBX_FILE_NAME="cntr_u4j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_D5M|Sdram_Control_4Port:u7|Sdram_WR_FIFO:write_fifo1|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_e5o1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_D5M|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder" CBX_FILE_NAME="decode_rqf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_D5M|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_read_pointer_counter" CBX_FILE_NAME="cntr_gui.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

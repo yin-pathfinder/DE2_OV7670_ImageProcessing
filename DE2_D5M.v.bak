@@ -1,0 +1,301 @@
+// --------------------------------------------------------------------
+// Copyright (c) 2007 by Terasic Technologies Inc. 
+// --------------------------------------------------------------------
+//
+// Permission:
+//
+//   Terasic grants permission to use and modify this code for use
+//   in synthesis for all Terasic Development Boards and Altera Development 
+//   Kits made by Terasic.  Other use of this code, including the selling 
+//   ,duplication, or modification of any portion is strictly prohibited.
+//
+// Disclaimer:
+//
+//   This VHDL/Verilog or C/C++ source code is intended as a design reference
+//   which illustrates how these types of functions can be implemented.
+//   It is the user's responsibility to verify their design for
+//   consistency and functionality through the use of formal
+//   verification methods.  Terasic provides no warranty regarding the use 
+//   or functionality of this code.
+//
+// --------------------------------------------------------------------
+//           
+//                     Terasic Technologies Inc
+//                     356 Fu-Shin E. Rd Sec. 1. JhuBei City,
+//                     HsinChu County, Taiwan
+//                     302
+//
+//                     web: http://www.terasic.com/
+//                     email: support@terasic.com
+//
+// --------------------------------------------------------------------
+//
+// Major Functions:	DE2 D5M VGA
+//
+// --------------------------------------------------------------------
+//
+// Revision History :
+// --------------------------------------------------------------------
+//   Ver  :| Author            :| Mod. Date :| Changes Made:
+//   V1.0 :| Johnny FAN        :| 07/07/09  :| Initial Revision
+// --------------------------------------------------------------------
+
+module DE2_D5M
+	(
+		////////////////////	Clock Input	 	////////////////////	 
+		CLOCK_50,						//	50 MHz
+		////////////////////	Push Button		////////////////////
+		RESET,							//	Pushbutton[3:0]
+		/////////////////////	SDRAM Interface		////////////////
+		DRAM_DQ,						//	SDRAM Data bus 16 Bits
+		DRAM_ADDR,						//	SDRAM Address bus 12 Bits
+		DRAM_LDQM,						//	SDRAM Low-byte Data Mask 
+		DRAM_UDQM,						//	SDRAM High-byte Data Mask
+		DRAM_WE_N,						//	SDRAM Write Enable
+		DRAM_CAS_N,						//	SDRAM Column Address Strobe
+		DRAM_RAS_N,						//	SDRAM Row Address Strobe
+		DRAM_CS_N,						//	SDRAM Chip Select
+		DRAM_BA_0,						//	SDRAM Bank Address 0
+		DRAM_BA_1,						//	SDRAM Bank Address 0
+		DRAM_CLK,						//	SDRAM Clock
+		DRAM_CKE,						//	SDRAM Clock Enable
+		////////////////////	VGA		////////////////////////////
+		VGA_CLK,   						//	VGA Clock
+		VGA_HS,							//	VGA H_SYNC
+		VGA_VS,							//	VGA V_SYNC
+		VGA_BLANK,						//	VGA BLANK
+		VGA_SYNC,						//	VGA SYNC
+		VGA_R,   						//	VGA Red[9:0]
+		VGA_G,	 						//	VGA Green[9:0]
+		VGA_B,  						//	VGA Blue[9:0]
+		////////////////////	CCD 	////////////////////////////
+		CCD_I2C_SCLK,
+		CCD_I2C_SDAT,
+		CCD_VSYNC,
+		CCD_HREF,
+		CCD_PIXCLK,
+		CCD_MCLK,
+		CCD_DATA
+		
+	);
+
+////////////////////////	Clock Input	 	////////////////////////
+input			CLOCK_50;				//	50 MHz
+////////////////////////	Push Button		////////////////////////
+input			RESET;					//	Pushbutton[3:0]
+///////////////////////		SDRAM Interface	////////////////////////
+inout	[15:0]	DRAM_DQ;				//	SDRAM Data bus 16 Bits
+output	[11:0]	DRAM_ADDR;				//	SDRAM Address bus 12 Bits
+output			DRAM_LDQM;				//	SDRAM Low-byte Data Mask 
+output			DRAM_UDQM;				//	SDRAM High-byte Data Mask
+output			DRAM_WE_N;				//	SDRAM Write Enable
+output			DRAM_CAS_N;				//	SDRAM Column Address Strobe
+output			DRAM_RAS_N;				//	SDRAM Row Address Strobe
+output			DRAM_CS_N;				//	SDRAM Chip Select
+output			DRAM_BA_0;				//	SDRAM Bank Address 0
+output			DRAM_BA_1;				//	SDRAM Bank Address 0
+output			DRAM_CLK;				//	SDRAM Clock
+output			DRAM_CKE;				//	SDRAM Clock Enable
+////////////////////////	VGA			////////////////////////////
+output			VGA_CLK;   				//	VGA Clock
+output			VGA_HS;					//	VGA H_SYNC
+output			VGA_VS;					//	VGA V_SYNC
+output			VGA_BLANK;				//	VGA BLANK
+output			VGA_SYNC;				//	VGA SYNC
+output	[4:0]	VGA_R;   				//	VGA Red[9:0]
+output	[5:0]	VGA_G;	 				//	VGA Green[9:0]
+output	[4:0]	VGA_B;   				//	VGA Blue[9:0]
+inout			CCD_I2C_SCLK;
+inout			CCD_I2C_SDAT;
+inout			CCD_VSYNC;
+inout			CCD_HREF;
+inout			CCD_PIXCLK;
+inout			CCD_MCLK;
+inout	[7:0]	CCD_DATA;
+///////////////////////////////////////////////////////////////////
+//=============================================================================
+// REG/WIRE declarations
+//=============================================================================
+//	CCD
+wire	[7:0]	CCD_DATA;
+wire			CCD_SDAT;
+wire			CCD_SCLK;
+wire			CCD_FLASH;
+wire			CCD_FVAL;
+wire			CCD_LVAL;
+wire			CCD_PIXCLK;
+wire			CCD_MCLK;				//	CCD Master Clock
+
+wire			CMOS_CLK;
+wire			Config_Done;
+
+wire	[15:0]	Read_DATA1;
+wire	[15:0]	Read_DATA2;
+wire			VGA_CTRL_CLK;
+wire	[15:0]	mCCD_DATA;
+wire	[7:0]	mCCD_DATA1;
+wire	[7:0]	mCCD_DATA2;
+wire			mCCD_DVAL;
+wire			mCCD_DVAL_d;
+wire	[10:0]	X_Cont;
+wire	[9:0]	Y_Cont;
+wire	[9:0]	X_ADDR;
+wire	[31:0]	Frame_Cont;
+wire			DLY_RST_0;
+wire			DLY_RST_1;
+wire			DLY_RST_2;
+wire			Read;
+reg		[7:0]	rCCD_DATA;
+reg				rCCD_LVAL;
+reg				rCCD_FVAL;
+wire	[11:0]	sCCD_R;
+wire	[11:0]	sCCD_G;
+wire	[11:0]	sCCD_B;
+wire			sCCD_DVAL;
+wire	[4:0]	VGA_R;   				//	VGA Red[9:0]
+wire	[5:0]	VGA_G;	 				//	VGA Green[9:0]
+wire	[4:0]	VGA_B;   				//	VGA Blue[9:0]
+reg		[1:0]	rClk;
+wire			sdram_ctrl_clk;
+wire			CLK_SAMPLE;
+
+
+assign	VGA_CTRL_CLK=	rClk[0];
+assign	VGA_CLK		=	~rClk[0];
+
+always@(posedge CLOCK_50)	rClk	<=	rClk+1;
+
+
+always@(posedge CCD_PIXCLK)
+begin
+	rCCD_DATA	<=	CCD_DATA;
+	rCCD_LVAL	<=	CCD_HREF;
+	rCCD_FVAL	<=	CCD_VSYNC;
+end
+
+VGA_Controller		u1	(	//	Host Side
+							.oRequest(Read),
+							.iRed({Read_DATA1[15:11],5'b0}),//Read_DATA2[9:0]
+							.iGreen({Read_DATA1[10:5],4'b0}),//{Read_DATA1[14:10],Read_DATA2[14:10]}
+							.iBlue({Read_DATA1[4:0],5'b0}),//Read_DATA1[9:0]
+							
+							//	VGA Side
+							.oVGA_R(VGA_R),
+							.oVGA_G(VGA_G),
+							.oVGA_B(VGA_B),
+							.oVGA_H_SYNC(VGA_HS),
+							.oVGA_V_SYNC(VGA_VS),
+							.oVGA_SYNC(VGA_SYNC),
+							.oVGA_BLANK(VGA_BLANK),
+							//	Control Signal
+							.iCLK(VGA_CTRL_CLK),
+							.iRST_N(DLY_RST_2)
+						);
+
+
+Reset_Delay			u2	(	.iCLK(CLOCK_50),
+							.iRST(RESET),
+							.oRST_0(DLY_RST_0),
+							.oRST_1(DLY_RST_1),
+							.oRST_2(DLY_RST_2)
+						);
+						
+CMOS_Capture		CMOS(
+							.iCLK(rClk[0]),
+							.iRST_N(DLY_RST_2),
+							.Init_Done(Config_Done),
+
+							.MOS_RST_N(),		//cmos work state(5ms delay for sccb config)
+							.CMOS_PWDN(),      //cmos power on	
+							.CMOS_XCLK(CCD_MCLK),		//25MHz
+							.CMOS_PCLK(CCD_PIXCLK),		//25MHz
+							.CMOS_iDATA(rCCD_DATA),		//CMOS Data
+							.CMOS_VSYNC(rCCD_FVAL),		//L: Vaild
+							.CMOS_HREF(rCCD_LVAL),		//H: Vaild
+
+							.CMOS_oCLK(CMOS_CLK),		//1/2 PCLK
+							.CMOS_oDATA(mCCD_DATA),		//16Bits RGB		
+							.CMOS_VALID(mCCD_DVAL),		//Data Enable
+							.CMOS_FPS_DATA()	//cmos fps
+						);
+
+
+
+//sdram_pll 			u6	(
+//							.inclk0(CLOCK_50),
+//							.c0(sdram_ctrl_clk),
+//							.c1(DRAM_CLK),
+//							.c2(CLK_SAMPLE)
+//						);
+
+//assign CCD_MCLK = rClk[0];
+
+Sdram_Control_4Port	u7	(	//	HOST Side						
+						    .REF_CLK(CLOCK_50),
+						    .RESET_N(1'b1),
+							//.CLK(sdram_ctrl_clk),
+
+							//	FIFO Write Side 1
+							.WR1_DATA(mCCD_DATA),
+							.WR1(mCCD_DVAL),
+							.WR1_ADDR(22'h100000),
+							.WR1_MAX_ADDR(22'h100000+640*480),
+							.WR1_LENGTH(9'h100),
+							.WR1_LOAD(!DLY_RST_0),
+							.WR1_CLK(~CMOS_CLK),
+
+							//	FIFO Write Side 2
+//							.WR2_DATA(	{1'b0,sCCD_G[6:2],sCCD_R[11:2]}),
+//							.WR2(sCCD_DVAL),
+//							.WR2_ADDR(22'h100000),
+//							.WR2_MAX_ADDR(22'h100000+640*480),
+//							.WR2_LENGTH(9'h100),
+//							.WR2_LOAD(!DLY_RST_0),
+//							.WR2_CLK(~CCD_PIXCLK),
+
+
+							//	FIFO Read Side 1
+						    .RD1_DATA(Read_DATA1),
+				        	.RD1(Read),
+				        	.RD1_ADDR(22'h100000),
+							.RD1_MAX_ADDR(22'h100000+640*480),
+							.RD1_LENGTH(9'h100),
+							.RD1_LOAD(!DLY_RST_0),
+							.RD1_CLK(~VGA_CTRL_CLK),
+							
+							//	FIFO Read Side 2
+//						    .RD2_DATA(Read_DATA2),
+//							.RD2(Read),
+//							.RD2_ADDR(22'h100000),
+//							.RD2_MAX_ADDR(22'h100000+640*480),
+//							.RD2_LENGTH(9'h100),
+//				        	.RD2_LOAD(!DLY_RST_0),
+//							.RD2_CLK(~VGA_CTRL_CLK),
+							
+							//	SDRAM Side
+						    .SA(DRAM_ADDR),
+						    .BA({DRAM_BA_1,DRAM_BA_0}),
+        					.CS_N(DRAM_CS_N),
+        					.CKE(DRAM_CKE),
+        					.RAS_N(DRAM_RAS_N),
+        					.CAS_N(DRAM_CAS_N),
+        					.WE_N(DRAM_WE_N),
+        					.DQ(DRAM_DQ),
+        					.DQM({DRAM_UDQM,DRAM_LDQM}),
+        					.SDR_CLK(DRAM_CLK)
+						);
+
+
+
+I2C_AV_Config 			I2C(
+							.iCLK(rClk[0]),		//25MHz
+							.iRST_N(DLY_RST_2),		//Global Reset
+							.I2C_SCLK(CCD_I2C_SCLK),	//I2C CLOCK
+							.I2C_SDAT(CCD_I2C_SDAT),	//I2C DATA
+								
+							.Config_Done(Config_Done),//Config Done
+							.LUT_INDEX(),	//LUT Index
+							.I2C_RDATA()	//I2C Read Data
+						);
+
+endmodule

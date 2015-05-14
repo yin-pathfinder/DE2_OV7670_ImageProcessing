@@ -1,0 +1,354 @@
+TimeQuest Timing Analyzer report for DE2_D5M
+Tue Jan 27 16:38:35 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Minimum Pulse Width: 'altera_reserved_tck'
+ 12. Propagation Delay
+ 13. Minimum Propagation Delay
+ 14. Fast Model Setup Summary
+ 15. Fast Model Hold Summary
+ 16. Fast Model Recovery Summary
+ 17. Fast Model Removal Summary
+ 18. Fast Model Minimum Pulse Width Summary
+ 19. Fast Model Minimum Pulse Width: 'altera_reserved_tck'
+ 20. Propagation Delay
+ 21. Minimum Propagation Delay
+ 22. Multicorner Timing Analysis Summary
+ 23. Progagation Delay
+ 24. Minimum Progagation Delay
+ 25. Clock Transfers
+ 26. Report TCCS
+ 27. Report RSKM
+ 28. Unconstrained Paths
+ 29. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                       ;
++--------------------+--------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version ;
+; Revision Name      ; DE2_D5M                                                            ;
+; Device Family      ; Cyclone II                                                         ;
+; Device Name        ; EP2C70F896C6                                                       ;
+; Timing Models      ; Final                                                              ;
+; Delay Model        ; Combined                                                           ;
+; Rise/Fall Delays   ; Unavailable                                                        ;
++--------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                    ;
++---------------------+------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+; Clock Name          ; Type ; Period  ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                 ;
++---------------------+------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+; altera_reserved_tck ; Base ; 100.000 ; 10.0 MHz  ; 0.000 ; 50.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { altera_reserved_tck } ;
++---------------------+------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
+
+
+---------------------------
+; Slow Model Fmax Summary ;
+---------------------------
+No paths to report.
+
+
+----------------------------
+; Slow Model Setup Summary ;
+----------------------------
+No paths to report.
+
+
+---------------------------
+; Slow Model Hold Summary ;
+---------------------------
+No paths to report.
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------------+
+; Slow Model Minimum Pulse Width Summary       ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 97.778 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'altera_reserved_tck'                                                       ;
++--------+--------------+----------------+-----------+---------------------+------------+---------------------+
+; Slack  ; Actual Width ; Required Width ; Type      ; Clock               ; Clock Edge ; Target              ;
++--------+--------------+----------------+-----------+---------------------+------------+---------------------+
+; 97.778 ; 100.000      ; 2.222          ; Port Rate ; altera_reserved_tck ; Rise       ; altera_reserved_tck ;
++--------+--------------+----------------+-----------+---------------------+------------+---------------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; CLOCK_50   ; DRAM_CLK    ; 2.770 ;    ;    ; 2.770 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; CLOCK_50   ; DRAM_CLK    ; 2.770 ;    ;    ; 2.770 ;
++------------+-------------+-------+----+----+-------+
+
+
+----------------------------
+; Fast Model Setup Summary ;
+----------------------------
+No paths to report.
+
+
+---------------------------
+; Fast Model Hold Summary ;
+---------------------------
+No paths to report.
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------------+
+; Fast Model Minimum Pulse Width Summary       ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 97.778 ; 0.000         ;
++---------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'altera_reserved_tck'                                                       ;
++--------+--------------+----------------+-----------+---------------------+------------+---------------------+
+; Slack  ; Actual Width ; Required Width ; Type      ; Clock               ; Clock Edge ; Target              ;
++--------+--------------+----------------+-----------+---------------------+------------+---------------------+
+; 97.778 ; 100.000      ; 2.222          ; Port Rate ; altera_reserved_tck ; Rise       ; altera_reserved_tck ;
++--------+--------------+----------------+-----------+---------------------+------------+---------------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; CLOCK_50   ; DRAM_CLK    ; 1.455 ;    ;    ; 1.455 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; CLOCK_50   ; DRAM_CLK    ; 1.455 ;    ;    ; 1.455 ;
++------------+-------------+-------+----+----+-------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++----------------------+-------+------+----------+---------+---------------------+
+; Clock                ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------+-------+------+----------+---------+---------------------+
+; Worst-case Slack     ; N/A   ; N/A  ; N/A      ; N/A     ; 97.778              ;
+;  altera_reserved_tck ; N/A   ; N/A  ; N/A      ; N/A     ; 97.778              ;
+; Design-wide TNS      ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
+;  altera_reserved_tck ; N/A   ; N/A  ; N/A      ; N/A     ; 0.000               ;
++----------------------+-------+------+----------+---------+---------------------+
+
+
++----------------------------------------------------+
+; Progagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; CLOCK_50   ; DRAM_CLK    ; 2.770 ;    ;    ; 2.770 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Minimum Progagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; CLOCK_50   ; DRAM_CLK    ; 1.455 ;    ;    ; 1.455 ;
++------------+-------------+-------+----+----+-------+
+
+
+-------------------
+; Clock Transfers ;
+-------------------
+Nothing to report.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 5     ; 5    ;
+; Unconstrained Input Ports       ; 29    ; 29   ;
+; Unconstrained Input Port Paths  ; 67    ; 67   ;
+; Unconstrained Output Ports      ; 60    ; 60   ;
+; Unconstrained Output Port Paths ; 124   ; 124  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Tue Jan 27 16:38:34 2015
+Info: Command: quartus_sta DE2_D5M -c DE2_D5M
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 16 combinational loops as latches.
+Info (332164): Evaluating HDL-embedded SDC commands
+    Info (332165): Entity dcfifo_e5o1
+        Info (332166): set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_qe9:dffpipe22|dffe23a* 
+        Info (332166): set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_pe9:dffpipe18|dffe19a* 
+    Info (332165): Entity sld_jtag_hub
+        Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 10MHz   
+        Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'DE2_D5M.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Warning (332060): Node: rClk[0] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: CLOCK_50 was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: I2C_AV_Config:I2C|LUT_INDEX[0] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: CMOS_Capture:CMOS|CMOS_oCLK was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: CCD_PIXCLK was determined to be a clock but was found without an associated clock assignment.
+Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Node: u7|sdram_pll1|altpll_component|pll|clk[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
+    Warning (332056): Node: u7|sdram_pll1|altpll_component|pll|clk[1] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332140): No fmax paths to report
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 97.778
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    97.778         0.000 altera_reserved_tck 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Warning (332060): Node: rClk[0] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: CLOCK_50 was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: I2C_AV_Config:I2C|LUT_INDEX[0] was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: CMOS_Capture:CMOS|CMOS_oCLK was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: CCD_PIXCLK was determined to be a clock but was found without an associated clock assignment.
+Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Node: u7|sdram_pll1|altpll_component|pll|clk[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
+    Warning (332056): Node: u7|sdram_pll1|altpll_component|pll|clk[1] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 97.778
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    97.778         0.000 altera_reserved_tck 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 453 megabytes
+    Info: Processing ended: Tue Jan 27 16:38:35 2015
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

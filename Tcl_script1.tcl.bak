@@ -1,0 +1,72 @@
+set_location_assignment PIN_AC1 -to DRAM_DQ[0]
+set_location_assignment PIN_AC2 -to DRAM_DQ[1]
+set_location_assignment PIN_AC3 -to DRAM_DQ[2]
+set_location_assignment PIN_AD1 -to DRAM_DQ[3]
+set_location_assignment PIN_AD2 -to DRAM_DQ[4]
+set_location_assignment PIN_AD3 -to DRAM_DQ[5]
+set_location_assignment PIN_AE1 -to DRAM_DQ[6]
+set_location_assignment PIN_AE2 -to DRAM_DQ[7]
+set_location_assignment PIN_AE3 -to DRAM_DQ[8]
+set_location_assignment PIN_AF1 -to DRAM_DQ[9]
+set_location_assignment PIN_AF2 -to DRAM_DQ[10]
+set_location_assignment PIN_AF3 -to DRAM_DQ[11]
+set_location_assignment PIN_AG2 -to DRAM_DQ[12]
+set_location_assignment PIN_AG3 -to DRAM_DQ[13]
+set_location_assignment PIN_AH1 -to DRAM_DQ[14]
+set_location_assignment PIN_AH2 -to DRAM_DQ[15]
+
+set_location_assignment PIN_AA4 -to DRAM_ADDR[0]
+set_location_assignment PIN_AA5 -to DRAM_ADDR[1]
+set_location_assignment PIN_AA6 -to DRAM_ADDR[2]
+set_location_assignment PIN_AB5 -to DRAM_ADDR[3]
+set_location_assignment PIN_AB7 -to DRAM_ADDR[4]
+set_location_assignment PIN_AC4 -to DRAM_ADDR[5]
+set_location_assignment PIN_AC5 -to DRAM_ADDR[6]
+set_location_assignment PIN_AC6 -to DRAM_ADDR[7]
+set_location_assignment PIN_AD4 -to DRAM_ADDR[8]
+set_location_assignment PIN_AC7 -to DRAM_ADDR[9]
+set_location_assignment PIN_Y8 -to DRAM_ADDR[10]
+set_location_assignment PIN_AE4 -to DRAM_ADDR[11]
+
+set_location_assignment PIN_AA9 -to DRAM_BA_0
+set_location_assignment PIN_AA10 -to DRAM_BA_1
+set_location_assignment PIN_W10 -to DRAM_CAS_N
+set_location_assignment PIN_AA8 -to DRAM_CKE
+set_location_assignment PIN_AD6 -to DRAM_CLK
+set_location_assignment PIN_Y10 -to DRAM_CS_N
+set_location_assignment PIN_V9 -to DRAM_LDQM
+set_location_assignment PIN_AB6 -to DRAM_UDQM
+set_location_assignment PIN_Y9 -to DRAM_RAS_N
+set_location_assignment PIN_W9 -to DRAM_WE_N
+
+set_location_assignment PIN_G21 -to VGA_R[5]
+set_location_assignment PIN_H20 -to VGA_R[6]
+set_location_assignment PIN_F20 -to VGA_R[7]
+set_location_assignment PIN_E20 -to VGA_R[8]
+set_location_assignment PIN_G20 -to VGA_R[9]
+
+set_location_assignment PIN_B12 -to VGA_G[4]
+set_location_assignment PIN_A12 -to VGA_G[5]
+set_location_assignment PIN_C13 -to VGA_G[6]
+set_location_assignment PIN_B13 -to VGA_G[7]
+set_location_assignment PIN_B14 -to VGA_G[8]
+set_location_assignment PIN_A14 -to VGA_G[9]
+
+set_location_assignment PIN_B18 -to VGA_B[5]
+set_location_assignment PIN_B19 -to VGA_B[6]
+set_location_assignment PIN_A19 -to VGA_B[7]
+set_location_assignment PIN_C19 -to VGA_B[8]
+set_location_assignment PIN_D19 -to VGA_B[9]
+
+set_location_assignment PIN_C15 -to VGA_BLANK
+set_location_assignment PIN_D24 -to VGA_CLK
+set_location_assignment PIN_J19 -to VGA_HS
+set_location_assignment PIN_H19 -to VGA_VS
+set_location_assignment PIN_B15 -to VGA_SYNC
+
+set_location_assignment PIN_T29 -to RESET
+
+set_location_assignment PIN_W27 -to LEDG[0]
+set_location_assignment PIN_W25 -to LEDG[1]
+set_location_assignment PIN_W23 -to LEDG[2]
+set_location_assignment PIN_Y27 -to LEDG[3]

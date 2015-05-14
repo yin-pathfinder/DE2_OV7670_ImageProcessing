@@ -1,0 +1,106 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : -0.576 ns
+Required Time  : 1.000 ns
+Actual Time    : 1.576 ns
+From           : DRAM_DQ[1]
+To             : Sdram_Control_4Port:u7|mDATAOUT[1]
+From Clock     : --
+To Clock       : CLOCK_50
+Failed Paths   : 16
+
+Type           : Worst-case tco
+Slack          : -6.133 ns
+Required Time  : 1.000 ns
+Actual Time    : 7.133 ns
+From           : Sdram_Control_4Port:u7|Sdram_WR_FIFO:write_fifo2|dcfifo:dcfifo_component|dcfifo_e5o1:auto_generated|altsyncram_1l81:fifo_ram|altsyncram_drg1:altsyncram5|q_a[15]
+To             : DRAM_DQ[15]
+From Clock     : CLOCK_50
+To Clock       : --
+Failed Paths   : 64
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.150 ns
+From           : CCD_DATA[1]
+To             : rCCD_DATA[1]
+From Clock     : --
+To Clock       : CCD_PIXCLK
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Sdram_Control_4Port:u7|Sdram_PLL:sdram_pll1|altpll:altpll_component|_clk0'
+Slack          : 2.685 ns
+Required Time  : 100.00 MHz ( period = 10.000 ns )
+Actual Time    : 136.71 MHz ( period = 7.315 ns )
+From           : Sdram_Control_4Port:u7|rRD1_ADDR[10]
+To             : Sdram_Control_4Port:u7|rRD1_ADDR[10]
+From Clock     : Sdram_Control_4Port:u7|Sdram_PLL:sdram_pll1|altpll:altpll_component|_clk0
+To Clock       : Sdram_Control_4Port:u7|Sdram_PLL:sdram_pll1|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLOCK_50'
+Slack          : 5.356 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : 107.67 MHz ( period = 9.288 ns )
+From           : VGA_Controller:u1|oRequest
+To             : Sdram_Control_4Port:u7|Sdram_RD_FIFO:read_fifo1|dcfifo:dcfifo_component|dcfifo_e5o1:auto_generated|a_graycounter_o96:rdptr_g1p|counter_ffa[9]
+From Clock     : CLOCK_50
+To Clock       : CLOCK_50
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CCD_PIXCLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 135.65 MHz ( period = 7.372 ns )
+From           : CMOS_Capture:CMOS|CMOS_VALID
+To             : Sdram_Control_4Port:u7|Sdram_WR_FIFO:write_fifo1|dcfifo:dcfifo_component|dcfifo_e5o1:auto_generated|altsyncram_1l81:fifo_ram|altsyncram_drg1:altsyncram5|ram_block6a9~portb_datain_reg6
+From Clock     : CCD_PIXCLK
+To Clock       : CCD_PIXCLK
+Failed Paths   : 0
+
+Type           : Clock Hold: 'Sdram_Control_4Port:u7|Sdram_PLL:sdram_pll1|altpll:altpll_component|_clk0'
+Slack          : 0.499 ns
+Required Time  : 100.00 MHz ( period = 10.000 ns )
+Actual Time    : N/A
+From           : Sdram_Control_4Port:u7|command:command1|do_rw
+To             : Sdram_Control_4Port:u7|command:command1|do_rw
+From Clock     : Sdram_Control_4Port:u7|Sdram_PLL:sdram_pll1|altpll:altpll_component|_clk0
+To Clock       : Sdram_Control_4Port:u7|Sdram_PLL:sdram_pll1|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Hold: 'CLOCK_50'
+Slack          : 0.499 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : N/A
+From           : VGA_Controller:u1|mVGA_V_SYNC
+To             : VGA_Controller:u1|mVGA_V_SYNC
+From Clock     : CLOCK_50
+To Clock       : CLOCK_50
+Failed Paths   : 0
+
+Type           : Clock Hold: 'CCD_PIXCLK'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : CMOS_Capture:CMOS|CMOS_oDATA[13]
+To             : Sdram_Control_4Port:u7|Sdram_WR_FIFO:write_fifo1|dcfifo:dcfifo_component|dcfifo_e5o1:auto_generated|altsyncram_1l81:fifo_ram|altsyncram_drg1:altsyncram5|ram_block6a9~portb_datain_reg4
+From Clock     : CCD_PIXCLK
+To Clock       : CCD_PIXCLK
+Failed Paths   : 9
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 89
+
+--------------------------------------------------------------------------------------
+
